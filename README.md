@@ -201,7 +201,15 @@ http://localhost:8000/api/dashboard
     ]
 }
 
+
+
 ```
+
+"monthlyTrends": [
+  { "_id": 4, "total": 29500 }
+]
+
+_id: 4 = April (month number)
 
 ---
 
