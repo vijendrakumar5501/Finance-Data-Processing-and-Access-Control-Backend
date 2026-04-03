@@ -195,7 +195,7 @@ Authorization: <your_token>
 3. Use token in headers
 4. Access APIs
 
-
+```
 
     [
   {
@@ -215,6 +215,7 @@ Authorization: <your_token>
     "createdAt": "2026-04-03T05:55:20.864Z"
   }
 ]
+```
 
 ---
 
