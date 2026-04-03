@@ -195,6 +195,9 @@ Authorization: <your_token>
 3. Use token in headers
 4. Access APIs
 
+## GET
+http://localhost:8000/api/users/
+
 ```
 
     [
