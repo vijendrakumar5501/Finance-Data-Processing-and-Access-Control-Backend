@@ -201,7 +201,7 @@ Authorization: <your_token>
 
  ## http://localhost:8000/api/users/
 
-[
+* ` [
     {
         "_id": "69cf4fa316a75eaa3bcccc32",
         "name": "Vijendra Kumar",
@@ -229,6 +229,7 @@ Authorization: <your_token>
 
 ## http://localhost:8000/api/dashboard
 
+* ` 
 {
     "totalIncome": 25000,
     "totalExpense": 4500,
