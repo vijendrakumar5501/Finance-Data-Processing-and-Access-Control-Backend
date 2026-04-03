@@ -8,21 +8,53 @@ exports.createRecord = async (req, res) => {
   res.status(201).json(record);
 };
 
+
+
 exports.getRecords = async (req, res) => {
-  const { type, category, startDate, endDate } = req.query;
+  try {
+    const {
+      type,
+      category,
+      startDate,
+      endDate,
+      page = 1,
+      limit = 10
+    } = req.query;
 
-  let query = {};
-  if (type) query.type = type;
-  if (category) query.category = category;
+    let query = {};
 
-  if (startDate || endDate) {
-    query.date = {};
-    if (startDate) query.date.$gte = new Date(startDate);
-    if (endDate) query.date.$lte = new Date(endDate);
+   
+    if (type) {
+      query.type = type;
+    }
+
+    
+    if (category) {
+      query.category = { $regex: category, $options: 'i' };
+    }
+
+    
+    if (startDate || endDate) {
+      query.date = {};
+      if (startDate) query.date.$gte = new Date(startDate);
+      if (endDate) query.date.$lte = new Date(endDate);
+    }
+
+    
+    const records = await Record.find(query)
+      .sort({ date: -1 }) 
+      .skip((page - 1) * limit)
+      .limit(Number(limit));
+
+    res.status(200).json({
+      total: records.length,
+      page: Number(page),
+      data: records
+    });
+
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
   }
-
-  const records = await Record.find(query);
-  res.json(records);
 };
 
 exports.updateRecord = async (req, res) => {
