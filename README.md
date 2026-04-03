@@ -211,6 +211,10 @@ http://localhost:8000/api/dashboard
 
 _id: 4 = April (month number)
 
+Means:
+
+All your records are in April only
+
 ---
 
 ## 🔑 Authentication
