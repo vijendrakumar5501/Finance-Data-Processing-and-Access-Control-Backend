@@ -176,6 +176,33 @@ http://localhost:8000
 
 * `GET /api/dashboard`
 
+http://localhost:8000/api/dashboard
+
+```
+{
+    "totalIncome": 25000,
+    "totalExpense": 4500,
+    "balance": 20500,
+    "categoryBreakdown": [
+        {
+            "_id": "food",
+            "total": 4500
+        },
+        {
+            "_id": "it",
+            "total": 25000
+        }
+    ],
+    "monthlyTrends": [
+        {
+            "_id": 4,
+            "total": 29500
+        }
+    ]
+}
+
+```
+
 ---
 
 ## 🔑 Authentication
