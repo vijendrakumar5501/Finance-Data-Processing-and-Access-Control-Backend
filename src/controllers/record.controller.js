@@ -3,6 +3,7 @@ const Record = require('../models/record.model');
 exports.createRecord = async (req, res) => {
   const record = await Record.create({
     ...req.body,
+    category: req.body.category.toLowerCase(),
     createdBy: req.user._id
   });
   res.status(201).json(record);
