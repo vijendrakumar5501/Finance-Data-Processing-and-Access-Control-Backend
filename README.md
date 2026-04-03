@@ -195,6 +195,64 @@ Authorization: <your_token>
 3. Use token in headers
 4. Access APIs
 
+
+
+## GET
+
+ ## http://localhost:8000/api/users/
+
+[
+    {
+        "_id": "69cf4fa316a75eaa3bcccc32",
+        "name": "Vijendra Kumar",
+        "email": "vijendra@gmail.com",
+        "password": "$2b$10$yfDIUpFBQ7bkNtvakAE4XuqFW0DpO6L.lx5gVLnhT8LD5l.bGy7qO",
+        "role": "admin",
+        "isActive": true,
+        "createdAt": "2026-04-03T05:26:59.548Z",
+        "updatedAt": "2026-04-03T05:26:59.548Z",
+        "__v": 0
+    },
+    {
+        "_id": "69cf5648e613adab4e300d59",
+        "name": "rahul Kumar",
+        "email": "rahul@gmail.com",
+        "password": "$2b$10$VsLc/ocVtpigWFFUc/KvSu4pDCXaY2cZv2r8Q2BrCoYnrbZSdxzFC",
+        "role": "viewer",
+        "isActive": true,
+        "createdAt": "2026-04-03T05:55:20.864Z",
+        "updatedAt": "2026-04-03T05:55:20.864Z",
+        "__v": 0
+    }
+]
+
+
+## http://localhost:8000/api/dashboard
+
+{
+    "totalIncome": 25000,
+    "totalExpense": 4500,
+    "balance": 20500,
+    "categoryBreakdown": [
+        {
+            "_id": "food",
+            "total": 4500
+        },
+        {
+            "_id": "it",
+            "total": 25000
+        }
+    ],
+    "monthlyTrends": [
+        {
+            "_id": 4,
+            "total": 29500
+        }
+    ]
+}
+
+
+
 ---
 
 ## ⚠️ Error Handling
